@@ -13,11 +13,16 @@ export const App = () => {
   });
   
   return(
-    <div>
+    <>
+    <header>
+      <h1>THE PLANETS</h1>
       <nav>
         {LINKS}
       </nav>
+    </header>
+    <main>
       <Outlet />
-    </div>
+    </main>
+    </>
   )
 }

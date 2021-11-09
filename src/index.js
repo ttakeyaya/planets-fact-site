@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './App';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import planetsData from "./data.json";
+import { App } from './App';
 import { Planet } from './components/Planet';
+import planetsData from "./data.json";
 
 const RouteLists = planetsData.map(planet => {
   return <Route 

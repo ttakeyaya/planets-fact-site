@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 export const Planet = (props) =>{
   const {name, rotation, revolution, radius, temperature, overview, structure, geology, images} = props.planetData;
   const {planet :planetImage , internal: internalImage, geology:geologyImage} = images;
+  
   const [content, setContent] = useState(overview);
   const [imageShown, setImageShown] = useState(planetImage);
 
@@ -10,10 +11,6 @@ export const Planet = (props) =>{
     setContent(overview);
     setImageShown(planetImage);
   },[overview, planetImage]);
-
-  const formatImageURL = (url) => {
-    return url.replace('.', '..'); 
-  }
 
   const onClickHandler =(e) => {
     e.preventDefault();
@@ -29,6 +26,11 @@ export const Planet = (props) =>{
       setImageShown(geologyImage);
     }
   }
+
+  const formatImageURL = (url) => {
+    return url.replace('.', '..'); 
+  }
+  
   return(
     <section>
       <figure>

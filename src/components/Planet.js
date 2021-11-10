@@ -1,10 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import { SectionWrapper, FigureWrapper, DefinitionList, ItemWrapper, ContentWrapper,ContentNavigation, ContentItem, ContentTitle, Quote,Content, ItemDefinition, ItemDescription } from './Planet.styled';
+import { SectionWrapper, FigureWrapper, DefinitionList, ItemWrapper, ContentWrapper,ContentNavigation, ContentItem, ContentTitle, Quote,Content, ItemDefinition, ItemDescription,GeologyImage } from './Planet.styled';
 
 
 export const Planet = (props) =>{
-  const {name, rotation, revolution, radius, temperature, overview, structure, geology, images} = props.planetData;
-  const {planet :planetImage , internal: internalImage, geology:geologyImage} = images;
+  const {
+    name, 
+    rotation, 
+    revolution, 
+    radius, 
+    temperature, 
+    overview,
+    structure, 
+    geology,
+    images
+  } = props.planetData;
+
+  const {
+    planet :planetImage, 
+    internal: internalImage, 
+    geology:geologyImage
+  } = images;
   
   const [content, setContent] = useState(overview);
   const [imageShown, setImageShown] = useState(planetImage);
@@ -20,7 +35,7 @@ export const Planet = (props) =>{
     if(currentContent === "OVERVIEW"){
       setContent(overview);
       setImageShown(planetImage);
-    }else if(currentContent === "INTERNAL STRUCTURE"){
+    }else if(currentContent === "STRUCTURE"){
       setContent(structure);
       setImageShown(internalImage);
     }else{
@@ -32,12 +47,28 @@ export const Planet = (props) =>{
   const formatImageURL = (url) => {
     return url.replace('.', '..'); 
   }
-  
+
+  const Images = (content) => {
+    if(content === overview || content === structure){
+      return(
+        <FigureWrapper>
+          <img src={formatImageURL(imageShown)} alt="sample"/>
+        </FigureWrapper>
+      );
+    }else{
+      return(
+        <FigureWrapper>
+          <img src={formatImageURL(planetImage)} alt="planet"/>
+          <GeologyImage>
+            <img src={formatImageURL(imageShown)} alt="sample"/>
+          </GeologyImage>
+        </FigureWrapper>
+      );
+    }
+  }
   return(
     <SectionWrapper>
-      <FigureWrapper>
-        <img src={formatImageURL(imageShown)} alt="sample"/>
-      </FigureWrapper>
+      {Images(content)}
       <ContentWrapper>
         <ContentTitle>
           {name.toUpperCase()}

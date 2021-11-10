@@ -10,6 +10,7 @@ export const SectionWrapper = styled.section`
 `;
 
 export const FigureWrapper = styled.figure`
+  position:relative;
   margin:9.5rem 0 9.8rem 0;
   width:11.1rem;
   height:11.1rem;
@@ -17,6 +18,17 @@ export const FigureWrapper = styled.figure`
     height:100%;
     width:100%;
   }
+`;
+export const GeologyImage = styled.div`
+  position:absolute;
+  left:20%;
+  top:80%;
+  width:8rem;
+  height:auto;
+  &>img{
+    width:100%;
+  }
+  
 `;
 export const ContentWrapper = styled.div`
   text-align:center;

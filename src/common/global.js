@@ -17,5 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     margin:0;
     padding:0;
+    font-family: 'Antonio', sans-serif;
+    font-family: 'Spartan', sans-serif;
   }
 `;

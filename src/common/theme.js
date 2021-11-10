@@ -1,0 +1,18 @@
+export const planetsColor={
+  mercury:"#419EBB",
+  mercuryCircle:"#DEF4FC",
+  venus:"#EDA249",
+  venusCircle:"#F7CC7F",
+  earth:"#6D2ED5",
+  earthCircle:"#545BFE",
+  mars:"#D14C32",
+  marsCircle:"#FF6A45",
+  jupiter:"#D83A34",
+  jupiterCircle:"#ECAD7A",
+  saturn:"#CD5120",
+  saturnCircle:"#FCCB6B",
+  uranus:"#1EC1A2",
+  uranusCircle:"#65F0D5",
+  neptune:"#2D68F0",
+  neptuneCircle:"#497EFA",
+};

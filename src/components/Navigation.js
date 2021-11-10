@@ -11,7 +11,7 @@ export const Navigation = (props) =>{
                 key={planet.name}
                 onClick={props.click}
               >
-                <IconCircle />
+                <IconCircle planetName={planet.name.toLowerCase()}/>
                 {planet.name.toUpperCase()}
               </StyledLink>
               <IconChevron />

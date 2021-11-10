@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import { SectionWrapper, FigureWrapper, DefinitionList, ItemWrapper, ContentWrapper,ContentNavigation, ContentItem, ContentTitle, Quote,Content, ItemDefinition, ItemDescription } from './Planet.styled';
+
 
 export const Planet = (props) =>{
   const {name, rotation, revolution, radius, temperature, overview, structure, geology, images} = props.planetData;
@@ -32,32 +34,75 @@ export const Planet = (props) =>{
   }
   
   return(
-    <section>
-      <figure>
+    <SectionWrapper>
+      <FigureWrapper>
         <img src={formatImageURL(imageShown)} alt="sample"/>
-      </figure>
-      <h2>
-        {name.toUpperCase()}
-      </h2>
-      <blockquote cite={content.source}>
-        <p>{content.content}</p>
-        source <cite><a href={content.source}>Wikipedia</a></cite>
-      </blockquote>
-      <ul>
-        <li onClick={onClickHandler}>OVERVIEW</li>
-        <li onClick={onClickHandler}>INTERNAL STRUCTURE</li>
-        <li onClick={onClickHandler}>SURFACE GEOLOGY</li>
-      </ul>
-      <dl>
-        <dt>ROTATION TIME</dt>
-        <dd>{rotation}</dd>
-        <dt>REVOLUTION TIME</dt>
-        <dd>{revolution}</dd>
-        <dt>RADIUS</dt>
-        <dd>{radius}</dd>
-        <dt>AVERAGE TEMP</dt>
-        <dd>{temperature}</dd>
-      </dl>
-    </section>
+      </FigureWrapper>
+      <ContentWrapper>
+        <ContentTitle>
+          {name.toUpperCase()}
+        </ContentTitle>
+        <Quote cite={content.source}>
+          <Content>
+            {content.content}
+          </Content>
+          Source <cite><a href={content.source}>Wikipedia</a></cite>
+        </Quote>
+      </ContentWrapper>
+      <ContentNavigation>
+        <ContentItem 
+          onClick={onClickHandler} 
+          name={name}
+        >
+          OVERVIEW
+        </ContentItem>
+        <ContentItem 
+          onClick={onClickHandler}
+          name={name}
+        >
+          STRUCTURE
+        </ContentItem>
+        <ContentItem 
+          onClick={onClickHandler}
+          name={name}
+        >
+          GEOLOGY
+        </ContentItem>
+      </ContentNavigation>
+      <DefinitionList>
+        <ItemWrapper>
+          <ItemDefinition>
+            ROTATION TIME
+          </ItemDefinition>
+          <ItemDescription>
+            {rotation}
+          </ItemDescription>
+        </ItemWrapper>
+        <ItemWrapper>
+          <ItemDefinition>
+            REVOLUTION TIME
+          </ItemDefinition>
+          <ItemDescription>
+            {revolution}
+          </ItemDescription>
+        </ItemWrapper>
+        <ItemWrapper>
+          <ItemDefinition>
+            RADIUS
+          </ItemDefinition>
+          <ItemDescription>
+            {radius}
+          </ItemDescription>
+        </ItemWrapper>
+        <ItemWrapper>
+          <ItemDefinition>
+            AVERAGE TEMP
+          </ItemDefinition>
+          <ItemDescription>
+            {temperature}
+          </ItemDescription>
+        </ItemWrapper>
+      </DefinitionList>
+    </SectionWrapper>
   );
 }

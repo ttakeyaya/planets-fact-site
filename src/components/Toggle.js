@@ -1,13 +1,14 @@
 import React from 'react';
 import {ReactComponent as HamburgerIcon} from "../assets/icon-hamburger.svg";
+import { HamburgerIconContainer } from './Toggle.styled';
 
 export const Toggle = (props) =>{
 
   
   return(
-    <div onClick={props.click}>
+    <HamburgerIconContainer onClick={props.click}>
       {!props.isDisplayed ? <HamburgerIcon /> : ""}
-    </div>
+    </HamburgerIconContainer>
     
   )
 }

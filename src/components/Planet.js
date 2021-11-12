@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { SectionWrapper, FigureWrapper, DefinitionList, ItemWrapper, ContentWrapper,ContentNavigation, ContentItem, ContentTitle, Quote,Content, ItemDefinition, ItemDescription,GeologyImage } from './Planet.styled';
-
+import { SectionWrapper, FigureWrapper, DefinitionList, ItemWrapper, ContentWrapper,ContentNavigation, Source, SourceLink, ContentItem, ContentTitle, Quote,Content, ItemDefinition, ItemDescription,GeologyImage } from './Planet.styled';
+import {ReactComponent as IconSource} from '../assets/icon-source.svg';
 
 export const Planet = (props) =>{
   const {
@@ -69,6 +69,8 @@ export const Planet = (props) =>{
   return(
     <SectionWrapper>
       {Images(content)}
+
+
       <ContentWrapper>
         <ContentTitle>
           {name.toUpperCase()}
@@ -77,26 +79,28 @@ export const Planet = (props) =>{
           <Content>
             {content.content}
           </Content>
-          Source <cite><a href={content.source}>Wikipedia</a></cite>
+          <Source>
+          Source <cite><SourceLink href={content.source}>Wikipedia</SourceLink><IconSource/></cite>
+          </Source>
         </Quote>
       </ContentWrapper>
       <ContentNavigation>
         <ContentItem 
           onClick={onClickHandler} 
           name={name}
-        >
+          >
           OVERVIEW
         </ContentItem>
         <ContentItem 
           onClick={onClickHandler}
           name={name}
-        >
+          >
           STRUCTURE
         </ContentItem>
         <ContentItem 
           onClick={onClickHandler}
           name={name}
-        >
+          >
           GEOLOGY
         </ContentItem>
       </ContentNavigation>

@@ -1,6 +1,6 @@
 import React from 'react';
 import planetsData from "../data.json";
-import { Nav, StyledLink, LinkContainer, LinkItem, IconCircle } from './Navigation.styled';
+import { Nav, StyledLink, LinkContainer, LinkItem, IconCircle, StyledIconChevron } from './Navigation.styled';
 import {ReactComponent as IconChevron} from "../assets/icon-chevron.svg";
 
 export const Navigation = (props) =>{
@@ -14,7 +14,7 @@ export const Navigation = (props) =>{
                 <IconCircle planetName={planet.name.toLowerCase()}/>
                 {planet.name.toUpperCase()}
               </StyledLink>
-              <IconChevron />
+              <StyledIconChevron />
             </LinkItem>;
   });
 

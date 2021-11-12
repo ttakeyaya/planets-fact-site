@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { device } from "../common/media";
+
 
 export const SectionWrapper = styled.section`
   display:flex;
@@ -7,6 +9,10 @@ export const SectionWrapper = styled.section`
   align-items:center;
   width:100vw;
   margin:0 auto;
+  @media ${device.tablet}{
+    flex-wrap:wrap;
+    flex-direction:row;
+  }
 `;
 
 export const FigureWrapper = styled.figure`
@@ -14,9 +20,19 @@ export const FigureWrapper = styled.figure`
   margin:9.5rem 0 9.8rem 0;
   width:11.1rem;
   height:11.1rem;
+  @media ${device.tablet}{
+    /* width:18.4rem;
+    height:18.4rem; */
+    flex-basis:100%;
+    text-align:center;
+  }
   & > img{
     height:100%;
     width:100%;
+    @media ${device.tablet}{
+      width:18.4rem;
+      height:18.4rem;
+    }
   }
 `;
 export const GeologyImage = styled.div`
@@ -33,15 +49,39 @@ export const GeologyImage = styled.div`
 export const ContentWrapper = styled.div`
   text-align:center;
   width:90%;
+  @media ${device.tablet}{
+    width:50%;
+  }
 `;
 
 export const ContentTitle = styled.h2`
   font-size:4rem;
   font-family:'Antonio',sans-serif;
+  @media ${device.tablet}{
+    font-size:4.8rem;
+    text-align:left;
+  }
+`;
+export const Source = styled.div`
+  opacity: 0.8;
+  @media ${device.tablet}{
+    text-align:left;
+    display:flex;
+    align-items: center;
+  }
+`;
+
+export const SourceLink = styled.a`
+  color:white;
+  font-size:1.2rem;
+  padding:0 0.5rem;
+  font-family: 'Spartan', sans-serif;
+  font-style: normal;
+  font-weight:700;
 `;
 
 export const Quote=styled.blockquote`
-  width:100%;
+  width:95%;
   padding:0;
   margin:0;
 `;
@@ -51,6 +91,9 @@ export const Content=styled.p`
   font-size:1.1rem;
   font-family:'Spartan', sans-serif;
   line-height:2.2rem;
+  @media ${device.tablet}{
+    text-align:left;
+  }
 `;
 
 export const ContentNavigation = styled.ul`
@@ -62,6 +105,15 @@ export const ContentNavigation = styled.ul`
   justify-content: space-between;
   align-items:center;
   position:relative;
+  @media ${device.tablet}{
+    width:40%;
+    order:0;
+    flex-direction: column;
+    padding:0;
+    justify-content: space-around;
+    align-self: center;
+    height:15rem;
+  }
   &::after{
     position:absolute;
     content:'';
@@ -70,15 +122,25 @@ export const ContentNavigation = styled.ul`
     width:150%;
     height:1px;
     background-color:#979797;
+    @media ${device.tablet}{
+      display:none;
+    }
   }
 `;
 
 export const ContentItem = styled.li`
   cursor:pointer;
   font-size:0.9rem;
-  
+  @media ${device.tablet}{
+    border:1px solid #FFFFFF;
+    width:85%;
+    padding:.8rem 0 .8rem 5rem;
+  }
   &:hover{
     position:relative;
+    @media ${device.tablet}{
+      background-color:${props => props.theme[props.name.toLowerCase()]};
+    }
     &::after{
       position:absolute;
       z-index:5;
@@ -88,12 +150,18 @@ export const ContentItem = styled.li`
       width:100%;
       height:4px;
       background-color:${props => props.theme[props.name.toLowerCase()]};
+      @media ${device.tablet}{
+        display:none;
+      }
     }
   }
 `;
 export const DefinitionList = styled.dl`
   width:90%;
   padding-top:2.8rem;
+  @media ${device.tablet}{
+    display:flex;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -105,6 +173,14 @@ export const ItemWrapper = styled.div`
   padding:0 2%;
   border:1px solid #D8D8D8;
   width:100%;
+  @media ${device.tablet}{
+    height:8.8rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-bottom:3.6rem;
+    margin-right:1.1rem;
+  }
 `;
 
 export const ItemDefinition = styled.dt`
@@ -114,4 +190,8 @@ export const ItemDefinition = styled.dt`
 export const ItemDescription = styled.dd`
   font-size:2rem ;
   font-family:'Antonio',sans-serif;
+  @media ${device.tablet}{
+    margin:0;
+    font-size:2.4rem;
+  }
 `;

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Outlet} from "react-router-dom"
 import { GlobalStyles } from "./common/global";
-import { Page,Header, Title, Main } from "./App.styled";
+import { Header, Title, Main } from "./App.styled";
 import { Navigation } from "./components/Navigation";
 import {Toggle} from "./components/Toggle";
 import { ThemeProvider } from 'styled-components';

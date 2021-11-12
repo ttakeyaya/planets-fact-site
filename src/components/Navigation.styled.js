@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { device } from "../common/media";
+import {ReactComponent as IconChevron} from "../assets/icon-chevron.svg";
 
+export const StyledIconChevron = styled(IconChevron)`
+  @media ${device.tablet}{
+    display:none;
+  }
+`;
 export const Nav = styled.nav`
   position:absolute;
   top:15%;
@@ -8,6 +15,11 @@ export const Nav = styled.nav`
   width:100%;
   height:100%;
   display:${props => props.display ? "block":"none"};
+  @media ${device.tablet}{
+    position:relative;
+    display:flex;
+    height:auto;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -20,6 +32,9 @@ export const StyledLink = styled(Link)`
   text-decoration:none;
   display:flex;
   
+  @media ${device.tablet}{
+    font-size:1.1rem;
+  }
 `;
 
 export const LinkContainer = styled.ul`
@@ -28,6 +43,12 @@ export const LinkContainer = styled.ul`
   flex-direction:column;
   justify-content: space-around;
   height:100%;
+  @media ${device.tablet}{
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+
+  }
 `;
 
 export const LinkItem = styled.li`
@@ -38,7 +59,10 @@ export const LinkItem = styled.li`
   display:flex;
   justify-content: space-between;
   align-items: center;
-
+  @media ${device.tablet}{
+    border:none;
+    padding:0rem;
+  }
 `;
 
 export const IconCircle = styled.div`
@@ -49,4 +73,8 @@ export const IconCircle = styled.div`
   height:2rem;
   border-radius:50%;
   margin-right:2.5rem;
+
+  @media ${device.tablet}{
+    display:none;
+  }
 `;

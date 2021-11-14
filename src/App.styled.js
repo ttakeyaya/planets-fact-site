@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { device } from "./common/media";
 
-export const Page = styled.div`
-  width:100vw;
-`;
 
 export const Title = styled.h1`
   font-size:2.8rem;
@@ -21,6 +18,14 @@ export const Header = styled.header`
     flex-direction: column;
     width:100%;
   }
+  @media ${device.laptop}{
+    flex-direction: row;
+    width:90%;
+    max-width:1200px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid white;
+  }
 
   &::after{
     position:absolute;
@@ -32,6 +37,9 @@ export const Header = styled.header`
     left:0;
     @media ${device.tablet}{
       top:20%;
+    }
+    @media ${device.laptop}{
+      top:0%;
     }
   }
 `;

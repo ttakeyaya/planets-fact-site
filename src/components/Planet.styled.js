@@ -13,6 +13,19 @@ export const SectionWrapper = styled.section`
     flex-wrap:wrap;
     flex-direction:row;
   }
+  @media ${device.laptop}{
+    width:90%;
+    max-width:1200px;
+    margin:0 auto;
+    justify-content: space-around;
+    display:grid;
+    grid-template-areas: 
+      "Picture Description"
+      "Picture Navigation"
+      "Fact Fact"
+    ;
+    grid-template-columns: repeat(2,45%);
+  }
 `;
 
 export const FigureWrapper = styled.figure`
@@ -21,10 +34,12 @@ export const FigureWrapper = styled.figure`
   width:11.1rem;
   height:11.1rem;
   @media ${device.tablet}{
-    /* width:18.4rem;
-    height:18.4rem; */
     flex-basis:100%;
     text-align:center;
+  }
+  @media ${device.laptop}{
+    gird-area:Picture;
+    width:100%;
   }
   & > img{
     height:100%;
@@ -41,6 +56,14 @@ export const GeologyImage = styled.div`
   top:80%;
   width:8rem;
   height:auto;
+  @media ${device.tablet}{
+    left:45%;
+    top:130%;
+  }
+  @media ${device.laptop}{
+    left:40%;
+    top:150%;
+  }
   &>img{
     width:100%;
   }
@@ -51,6 +74,10 @@ export const ContentWrapper = styled.div`
   width:90%;
   @media ${device.tablet}{
     width:50%;
+  }
+  @media ${device.laptop}{
+    grid-area:Description;
+    width:350px;
   }
 `;
 
@@ -114,6 +141,11 @@ export const ContentNavigation = styled.ul`
     align-self: center;
     height:15rem;
   }
+  @media ${device.laptop}{
+    grid-area:Navigation;
+    min-width:350px;
+    width:100%;
+  }
   &::after{
     position:absolute;
     content:'';
@@ -135,6 +167,9 @@ export const ContentItem = styled.li`
     border:1px solid #FFFFFF;
     width:85%;
     padding:.8rem 0 .8rem 5rem;
+  }
+  @media ${device.laptop}{
+    width:100%;
   }
   &:hover{
     position:relative;
@@ -162,6 +197,11 @@ export const DefinitionList = styled.dl`
   @media ${device.tablet}{
     display:flex;
   }
+  @media ${device.laptop}{
+    grid-area:Fact;
+    width:100%;
+    justify-content: space-between;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -180,6 +220,10 @@ export const ItemWrapper = styled.div`
     align-items: flex-start;
     margin-bottom:3.6rem;
     margin-right:1.1rem;
+  }
+  @media ${device.laptop}{
+    margin-right:0;
+    max-width:22rem;
   }
 `;
 

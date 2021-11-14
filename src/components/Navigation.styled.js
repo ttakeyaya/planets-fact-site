@@ -20,6 +20,9 @@ export const Nav = styled.nav`
     display:flex;
     height:auto;
   }
+  @media ${device.laptop}{
+    width:66.5rem;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -47,7 +50,9 @@ export const LinkContainer = styled.ul`
     flex-direction: row;
     justify-content: space-around;
     width:100%;
-
+  }
+  @media ${device.laptop}{
+    margin-right:2%;
   }
 `;
 

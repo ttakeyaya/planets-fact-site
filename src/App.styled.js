@@ -8,8 +8,8 @@ export const Title = styled.h1`
 `;
 
 export const Header = styled.header`
-  width:90%;
-  padding:1.6rem 0;
+  width:100%;
+  padding:1.6rem 6%;
   margin:0 auto;
   display:flex;
   align-items: center;
@@ -26,24 +26,12 @@ export const Header = styled.header`
     align-items: center;
     border-bottom:1px solid white;
   }
-
-  &::after{
-    position:absolute;
-    content:'';
-    width:150%;
-    height: 1px;
-    background-color:#979797;
-    top:13%;
-    left:0;
-    @media ${device.tablet}{
-      top:20%;
-    }
-    @media ${device.laptop}{
-      top:0%;
-    }
-  }
+  border-bottom:1px solid white;
 `;
 
 export const Main = styled.main`
-  display:${props => !props.display ? "block":"none"};
+  display:${props => !props.displayed ? "block":"none"};
+  @media ${device.tablet}{
+    display:block;
+  }
 `;

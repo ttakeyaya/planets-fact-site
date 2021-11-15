@@ -7,7 +7,7 @@ export const Toggle = (props) =>{
   
   return(
     <HamburgerIconContainer onClick={props.click}>
-      {!props.isDisplayed ? <HamburgerIcon /> : ""}
+      {!props.displayed? <HamburgerIcon /> : ""}
     </HamburgerIconContainer>
     
   )

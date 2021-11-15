@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   left:0;
   width:100%;
   height:100%;
-  display:${props => props.display ? "block":"none"};
+  display:${props => props.displayed ? "block":"none"};
   @media ${device.tablet}{
     position:relative;
     display:flex;
@@ -38,6 +38,14 @@ export const StyledLink = styled(Link)`
   @media ${device.tablet}{
     font-size:1.1rem;
   }
+  @media ${device.laptop}{
+    padding-top:0.8rem
+  }
+  &:hover{
+    @media ${device.laptop}{
+      border-top:2px solid ${props =>props.theme[props.planetname] };
+    }
+  }
 `;
 
 export const LinkContainer = styled.ul`
@@ -48,7 +56,7 @@ export const LinkContainer = styled.ul`
   height:100%;
   @media ${device.tablet}{
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width:100%;
   }
   @media ${device.laptop}{
@@ -66,13 +74,14 @@ export const LinkItem = styled.li`
   align-items: center;
   @media ${device.tablet}{
     border:none;
+    width:auto;
     padding:0rem;
   }
 `;
 
 export const IconCircle = styled.div`
   background-color:${props => 
-    props.theme[props.planetName+'Circle']
+    props.theme[props.planetname+'Circle']
   };
   width:2rem;
   height:2rem;

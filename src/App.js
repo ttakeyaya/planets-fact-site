@@ -24,11 +24,11 @@ export const App = () => {
           click={onClickHandler}
         />
         <Toggle 
-          display={!isDisplayed} 
+          displayed={!isDisplayed} 
           click ={onClickHandler}
         />
       </Header>
-      <Main display={isDisplayed}>
+      <Main displayed={isDisplayed}>
         <Outlet />
       </Main>
       <GlobalStyles />

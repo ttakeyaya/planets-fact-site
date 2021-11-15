@@ -140,6 +140,7 @@ export const ContentNavigation = styled.ul`
     justify-content: space-around;
     align-self: center;
     height:15rem;
+    margin-top:5%;
   }
   @media ${device.laptop}{
     grid-area:Navigation;
@@ -163,19 +164,19 @@ export const ContentNavigation = styled.ul`
 export const ContentItem = styled.li`
   cursor:pointer;
   font-size:0.9rem;
+  font-weight:700;
   @media ${device.tablet}{
     border:1px solid #FFFFFF;
     width:85%;
-    padding:.8rem 0 .8rem 5rem;
+    padding:.8rem 0 .8rem 0rem;
+    background-color:${props => props.active ?props.theme[props.name.toLowerCase()] :""};
   }
   @media ${device.laptop}{
     width:100%;
   }
   &:hover{
     position:relative;
-    @media ${device.tablet}{
-      background-color:${props => props.theme[props.name.toLowerCase()]};
-    }
+    background-color:#38384F;
     &::after{
       position:absolute;
       z-index:5;
@@ -191,6 +192,18 @@ export const ContentItem = styled.li`
     }
   }
 `;
+
+export const ContentIndex = styled.span`
+    display:none;
+  @media ${device.tablet}{
+    display:inline-block;
+    padding:0 1.7rem 0rem 2rem;
+    font-size:.9rem;
+    font-weight:400;
+  }
+
+`;
+
 export const DefinitionList = styled.dl`
   width:90%;
   padding-top:2.8rem;

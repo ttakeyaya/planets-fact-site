@@ -1,17 +1,17 @@
 import React from 'react';
 import planetsData from "../data.json";
 import { Nav, StyledLink, LinkContainer, LinkItem, IconCircle, StyledIconChevron } from './Navigation.styled';
-import {ReactComponent as IconChevron} from "../assets/icon-chevron.svg";
 
 export const Navigation = (props) =>{
   const LINKS = planetsData.map(planet => {
-    return <LinkItem>      
+    return <LinkItem key={planet.name}>      
               <StyledLink 
                 to={'/' + planet.name.toLowerCase()}
-                key={planet.name}
+                
                 onClick={props.click}
+                planetname={planet.name.toLowerCase()}
               >
-                <IconCircle planetName={planet.name.toLowerCase()}/>
+                <IconCircle planetname={planet.name.toLowerCase()}/>
                 {planet.name.toUpperCase()}
               </StyledLink>
               <StyledIconChevron />
@@ -19,7 +19,7 @@ export const Navigation = (props) =>{
   });
 
   return(
-    <Nav display={props.display}>
+    <Nav displayed={props.display}>
       <LinkContainer>
         {LINKS}
       </LinkContainer>

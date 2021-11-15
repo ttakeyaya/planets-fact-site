@@ -18,6 +18,14 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App/>}>
         {RouteLists}
+        <Route 
+          path="*"
+          element={
+            <main>
+              <p>No planets found..</p>
+            </main>
+          }
+        />
       </Route>
     </Routes>
   </BrowserRouter>,

@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/ttakeyaya/planets-fact-site)
-- Live Site URL: [Live site](https://ttakeyaya.github.io/mercury)
+- Live Site URL: [Live site](https://ttakeyaya.github.io/planets-fact-site)
 
 ## My process
 

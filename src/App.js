@@ -5,7 +5,6 @@ import { Header, Title, Main } from "./App.styled";
 import { Navigation } from "./components/Navigation";
 import {Toggle} from "./components/Toggle";
 import { ThemeProvider } from 'styled-components';
-
 import { planetsColor } from './common/theme';
 
 export const App = () => {

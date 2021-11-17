@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { 
   SectionWrapper,
-  FigureWrapper,
   DefinitionList,
   ItemWrapper,
   ContentWrapper,
@@ -14,9 +13,9 @@ import {
   Quote,Content,
   ItemDefinition,
   ItemDescription,
-  GeologyImage
 } from './Planet.styled';
 import {ReactComponent as IconSource} from '../assets/icon-source.svg';
+import { PlanetImage } from './PlanetImage';
 
 export const Planet = (props) =>{
   const {
@@ -51,7 +50,6 @@ export const Planet = (props) =>{
   const onClickHandler =(e) => {
     e.preventDefault();
     let currentContent = e.target.textContent;
-    console.log(currentContent);
     if(currentContent === "01OVERVIEW"){
       setContent(overview);
       setImageShown(planetImage);
@@ -73,31 +71,10 @@ export const Planet = (props) =>{
     }
   }
 
-  const formatImageURL = (url) => {
-    return url.replace('.', '..'); 
-  }
 
-  const Images = (content) => {
-    if(content === overview || content === structure){
-      return(
-        <FigureWrapper>
-          <img src={formatImageURL(imageShown)} alt="sample"/>
-        </FigureWrapper>
-      );
-    }else{
-      return(
-        <FigureWrapper>
-          <img src={formatImageURL(planetImage)} alt="planet"/>
-          <GeologyImage>
-            <img src={formatImageURL(imageShown)} alt="sample"/>
-          </GeologyImage>
-        </FigureWrapper>
-      );
-    }
-  }
   return(
     <SectionWrapper>
-      {Images(content)}
+      <PlanetImage currentContent={imageShown}/>
       <ContentWrapper>
         <ContentTitle>
           {name.toUpperCase()}

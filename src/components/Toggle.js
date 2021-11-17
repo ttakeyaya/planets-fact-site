@@ -4,10 +4,9 @@ import { HamburgerIconContainer } from './Toggle.styled';
 
 export const Toggle = (props) =>{
 
-  
   return(
     <HamburgerIconContainer onClick={props.click}>
-      {!props.displayed? <HamburgerIcon /> : ""}
+      <HamburgerIcon />
     </HamburgerIconContainer>
     
   )

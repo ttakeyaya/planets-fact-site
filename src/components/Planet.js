@@ -38,13 +38,16 @@ export const Planet = (props) =>{
   
   const [content, setContent] = useState(overview);
   const [imageShown, setImageShown] = useState(planetImage);
-  const [isOverviewActive, setIsOverviewActive] = useState(false);
+  const [isOverviewActive, setIsOverviewActive] = useState(true);
   const [isStructureActive, setIsStructureActive] = useState(false);
   const [isGeologyActive, setIsGeologyActive] = useState(false);
 
   useEffect(() => {
     setContent(overview);
     setImageShown(planetImage);
+    setIsOverviewActive(true);
+    setIsStructureActive(false);
+    setIsGeologyActive(false);
   },[overview, planetImage]);
 
   const onClickHandler =(e) => {
